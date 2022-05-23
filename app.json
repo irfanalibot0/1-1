@@ -25,6 +25,10 @@
       "description": "get this value from @BotFather",
       "value": ""
     },
+    "CONFIG_ENV_URL": {
+      "description": "config url",
+      "value": ""
+    },
     "AUTH_CHANNEL": {
       "description": "should be an integer. The BOT API ID of the Telegram Group, where the Leecher should work., Put Group ID",
       "value": ""
