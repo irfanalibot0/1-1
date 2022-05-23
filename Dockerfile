@@ -1,3 +1,4 @@
+#1
 FROM ubuntu:20.04
 
 
@@ -35,4 +36,18 @@ COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
 RUN chmod +x extract
+CMD ["bash","start.sh"]
+
+#2
+FROM python:3.9-slim
+
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
+RUN apt-get -qq update && \
+    apt-get -qq install -y unzip
+
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir -r requirements.txt
+COPY . .
+
 CMD ["bash","start.sh"]
